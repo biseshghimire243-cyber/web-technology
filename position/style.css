@@ -1,0 +1,45 @@
+h1{
+    color:gray;
+}
+
+.hehehe{
+    /* background-color:rgb(135, 95, 95); */
+
+}
+.box{
+    display: inline-block; 
+    border: 2px solid rgb(220, 18, 18);
+    width: 150px;
+    height: 150px;
+    margin: 5px;;
+    
+}
+.container{
+    border: 2px;
+    height: 3450px;
+    margin: 2px;
+    background-color:khaki;
+    /* position: relative; */
+}
+body{
+    margin:0px;
+}
+#box3 {
+    /* relative:position the element relatives to its normal position and will leave a gap at its normal position */
+    /* position: relative; */
+    /* absolute:position the element relative to the position of  its first parents*/
+    /* top: 50px;
+    left: 50px; */
+    /* right: 50px;
+    bottom: 50px;
+     */
+}
+#box4{
+     position: absolute; 
+     /* position: fixed; */
+     position: sticky;
+    /* top: 20px; */
+    right: 20px;
+    /* left: 20px; */
+    bottom: 20px;
+} 

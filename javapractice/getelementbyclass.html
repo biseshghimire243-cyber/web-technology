@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./getelementbyclass.css">
+    <title>practice</title>
+</head>
+<body>
+    <p class="title">hello world</p>
+    <p class="title">hello nepal</p>
+    <p class="title">hello america</p>
+    <button onclick="changecolor()">change</button>
+</body>
+<script>
+
+    function changecolor(){
+        for(i=0;i<3;i++)
+        document.getElementsByClassName("title")[i].style.color="red";
+}
+</script>
+</html>

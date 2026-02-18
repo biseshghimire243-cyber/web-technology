@@ -1,0 +1,46 @@
+<!-- notes -->
+<!-- // document.getElementById
+// document=wholepage
+// getElementById=go and find the element that has this ID
+// it is a javascript method used to select an html element using its id.
+// change text
+/* <div id='box'>hellow world</div> yeslai notice garna ko lagi document.getElementById banako
+document.getElementById("box") */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./getelementbyid.css">
+    <title>Html java practice</title>
+</head>
+<body>
+    <p id="title">hello world</p>
+    <div id="father">Hello my name is bishesh ghimire</div>
+    <button onclick="changeetxt()">click</button>
+    <button onclick="changecolor()">change</button>
+     <button onclick="hideelement()">Hide</button>
+     <button onclick="showelement()">show</button>
+     <button onclick="fontchange()">fontchange</button>
+
+    <script>
+function changeetxt(){
+    document.getElementById("title").innerHTML="hi,how are you";
+
+}
+function changecolor(){
+    document.getElementById("title").style.color="green";
+}
+
+function hideelement(){
+    document.getElementById("father").style.display="none";
+}
+
+function showelement(){
+    document.getElementById("father").style.display="block";
+}
+function fontchange(){
+    document.getElementById("title").style.fontSize="40px";
+}
+
+    </script>
+</body>
+</html>

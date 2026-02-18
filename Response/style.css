@@ -1,0 +1,36 @@
+.Web {
+  font-size: 56px;
+  color: green;
+}
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: purple;
+  /* margin-left: auto; float */
+  float: right;
+}
+@media only screen and (max-width: 500px) {
+  .box {
+    width: 50px;
+    height: 50px;
+    float: none;
+    margin: 0 auto; 
+    /* display: block; */
+    background-color: brown;
+  }
+}
+
+/* @media only screen and (max-width: 500px) {
+    .Web{
+        font-size: 20px;
+        color: red;
+    }
+} */
+
+/* @media only screen and (max-width: 800px) {
+    .Web{
+        font-size: 20px;
+        color: rgb(220, 240, 6);
+    }
+}  */
+
