@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getelementbytagname</title>
+  </head>
+  <body>
+    <h2>Example 1: change first paragraph</h2>
+    <div style="width: 100px; height: 50px; border: 1px solid black; background-color: red;">
+  first paragraph
+</div>
+<br />
+
+<div style="width: 100px; height: 50px; border: 1px solid green; background-color: yellow;">
+  first paragraph
+</div>
+<br />
+
+<div style="width: 100px; height: 50px; border: 1px solid blue; background-color: lightblue;">
+  first paragraph
+</div><br>
+    <button onclick="changefirst()">Change first paragraph</button>
+    <button onclick="changesecond()">Change second paragraph</button>
+    <button onclick="changethird()">Change third paragraph</button>
+    <button onclick="changeall()">Change all paragraph</button>
+    <button onclick="changecolor()">Change background color</button>
+
+    <p class="box">paragraph 1</p>
+    <p class="box">paragraph 2</p>
+    <p class="box">paragraph 3</p>
+    <button onclick="changeElement()">Click me</button>
+    <button onclick="changeAllcolor()">selector all</button>
+
+    <script>
+      function changefirst() {
+        let paragraphs = document.getElementsByTagName("p");
+        paragraphs[0].innerHTML = "first paragraph changed!";
+      }
+
+      function changesecond() {
+        let paragraphs = document.getElementsByTagName("p");
+        paragraphs[1].innerHTML = "first second changed!";
+      }
+
+      function changethird() {
+        let paragraphs = document.getElementsByTagName("p");
+        paragraphs[2].innerHTML = "first third changed!";
+      }
+
+      function changeall() {
+        let paragraphs = document.getElementsByTagName("p");
+        for (i = 0; i < paragraphs.length; i++) {
+          paragraphs[i].innerHTML = "All paragraph changed";
+        }
+      }
+
+      function changecolor() {
+        let div = document.getElementsByTagName("div");
+        div[0].style.backgroundColor = "red";
+        div[1].style.backgroundColor = "green";
+        div[2].style.backgroundColor = "blue";
+      }
+
+      function changeElement() {
+        let element = document.querySelector(".box");
+        element.style.backgroundColor = "yellow";
+        element.style.color = "red";
+        element.innerHTML = "changed using queryselector";
+      }
+
+      function changeAllcolor() {
+        let paragraphs = document.querySelectorAll("p");
+
+        // element.style.backgroundColor="yellow";
+        // element.style.color = "red"
+        // element.innerHTML = "changed using queryselector";
+        for (let i = 0; i < paragraphs.length; i++) {
+          paragraphs[i].style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
