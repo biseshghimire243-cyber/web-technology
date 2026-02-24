@@ -1,54 +1,329 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Ubuntu:wght@300;700&display=swap');
+
+:root {
+    --primary-color: #00d2ff;
+    --secondary-color: #3a7bd5;
+    --bg-dark: #0f0c29;
+}
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Fira Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
     display: flex;
 }
 
+/* --- SIDEBAR --- */
 .sidebar {
-    background-color: #f0f0f0;
-    width: 250px;
+    background-color:#777684;
+    width: 150px;
     height: 100vh;
-    transition: transform 0.3s ease-in-out;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease-in-out;
+    /* z-index: 100; */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
 }
 
-/* This class hides the sidebar */
 .sidebarGo {
-    transform: translateX(-250px);
-    position: absolute;
+    transform: translateX(-300px);
 }
 
-.main {
-    width: 100vw;
+.sidebar nav {
+    padding: 80px 30px;
 }
 
-nav ul li {
+.sidebar nav ul {
     list-style: none;
-    font-size: 25px;
-    padding: 25px 0;
 }
 
-nav ul li a {
+.sidebar nav ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar nav ul li a {
     text-decoration: none;
-    color: black;
-    padding-left: 30px;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: var(--secondary-color);
+    padding-left: 10px;
+}
+
+/* --- MAIN CONTENT & HAMBURGER --- */
+.main {
+    width: 100%;
+    min-height: 100vh;
 }
 
 .hamburger {
-    position: absolute;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     cursor: pointer;
-    top: 10px;
-    left: 10px;
-    background-color: black;
-    padding: 5px;
-    border-radius: 5px;
+    z-index: 101;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cross {
-    display: none; /* Hidden by default */
+.infoContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+/* --- TYPOGRAPHY --- */
+.name {
+    font-size: 65px;
+    font-weight: 700;
+    background: -webkit-linear-gradient(var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hello { font-size: 24px; color: var(--primary-color); }
+.about { font-size: 20px; color: #ccc; margin-bottom: 25px; }
+
+/* --- SECTION CONTROL --- */
+.content-section {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- CV WRAPPER --- */
+.cv-wrapper {
+    background: white;
+    color: #333;
+    width: 95%;
+    max-width: 800px;
+    padding: 50px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.cv-header { border-bottom: 2px solid var(--secondary-color); padding-bottom: 20px; margin-bottom: 20px; }
+.cv-body { display: flex; justify-content: space-between; gap: 20px; }
+.cv-col { width: 48%; }
+.cv-col h3 { color: var(--secondary-color); margin-top: 15px; margin-bottom: 10px;}
+
+/* --- CONTACT FORM --- */
+.contact-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-details {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* --- BUTTONS --- */
+.buttons button, .print-btn, .contact-form button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cv, .print-btn, .contact-form button { 
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); 
+    color: white; 
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+
+.btn-contact {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+button:hover { 
+    transform: translateY(-3px); 
+    filter: brightness(1.1);
+}
+
+/* --- ANIMATION --- */
+.devPic img {
+    height: 80vh;
+    filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3));
+    width: 200px;
+    
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* --- PRINT --- */
+@media print {
+    .sidebar, .hamburger, .btn-cv, .buttons, .contact-form button { display: none !important; }
+    body { background: white; }
+    .cv-wrapper { box-shadow: none; width: 100%; margin: 0; padding: 20px;}
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .infoContainer { flex-direction: column-reverse; gap: 20px; text-align: center; }
+    .cv-body { flex-direction: column; }
+    .cv-col { width: 100%; }
+    .name { font-size: 45px; }
+}
+.badge {
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid var(--primary-color);
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 3. Typography Refresh */
+.name {
+    font-size: 75px; /* Bigger & bolder */
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.last-name {
+    -webkit-text-stroke: 1px var(--primary-color);
+    -webkit-text-fill-color: transparent;
+}
+
+.about {
+    font-size: 22px;
+    letter-spacing: 3px;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 40px;
+}
+
+/* 4. Image Frame & Floating Effect */
+.img-frame {
+    position: relative;
+    padding: 20px;
+}
+
+.img-frame::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 0;
+    left: 0;
+    animation: morphing 8s infinite ease-in-out;
+}
+
+@keyframes morphing {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+.devPic img {
+    height: 55vh;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+.close-btn {
+    float: right;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.close-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Clearfix for the float */
+.cv-wrapper::after, .contact-wrapper::after {
+    content: "";
+    clear: both;
+    display: table;
 }

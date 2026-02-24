@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio - CodeWithHarry Style</title>
+    <title>Bishesh Ghimire - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,34 +11,118 @@
         <div class="sidebar sidebarGo">
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#cv-section" class="nav-link">My CV</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
 
         <div class="main">
             <div class="hamburger">
-                <img class="ham" src="./bishesh ghimire photo-fotor-202602225837.png" alt="" width="23">
-                <img class="cross" src="./bishesh ghimire photo-fotor-202602225837.png" alt="" width="23">
+                <img class="ham" src="./hamb.png" alt="Menu" width="23">
+                <img class="cross" src="./cross.png" alt="Close" width="23">
             </div>
             
-            <div class="infoContainer">
-                <div class="devInfo">
-                    <div class="hello">Hi I am </div>
-                    <div class="name">BISHESH GHIMIRE</div>
-                    <div class="about">Developer, Programmer, Designer</div>
-                    <div class="buttons">
-                        <button>Download CV</button>
-                        <button>Contact Me</button>
-                    </div>
-                </div>
-                <div class="devPic"><img src="./bishesh ghimire photo-fotor-202602225837.png" alt="Developer"></div>
+            <section id="home" class="content-section">
+    <div class="bg-circle-1"></div>
+    <div class="bg-circle-2"></div>
+
+   <div class="infoContainer">
+        <div class="devInfo">
+            <span class="badge">Available for Work</span>
+            <div class="hello">Hello, I'm</div>
+            <div class="name">BISHESH <span class="last-name">GHIMIRE</span></div>
+            <div class="about">Developer | Programmer | Designer</div>
+            <div class="buttons">
+                <button id="downloadBtn" class="btn-cv">View Portfolio</button>
+                <button id="contactMeBtn" class="btn-contact">Let's Talk</button>
             </div>
         </div>
+        <div class="devPic">
+            <img src="./Screenshot_20240824-153019_Facebook (1).jpg" alt="Bishesh Ghimire">
+        </div>
     </div>
+</section>
+
+            <section id="cv-section" class="content-section hidden">
+                <div class="cv-wrapper">
+                    <div class="cv-header">
+                        <h1>BISHESH GHIMIRE</h1>
+                        <p>Itahari, Nepal | Full Stack Developer</p>
+                    </div>
+                    <div class="cv-body">
+                        <div class="cv-col">
+                            <h3>Experience</h3>
+                            <p><strong>Freelance Developer</strong> (2024-Present)<br>
+                            Building responsive web apps using modern technologies.</p>
+                            
+                            <h3>Education</h3>
+                            <p><strong>Computer Science</strong><br>
+                            Tribhuvan University Affiliated College</p>
+                        </div>
+                        <div class="cv-col">
+                            <h3>Skills</h3>
+                            <ul>
+                                <li>HTML / CSS / JavaScript</li>
+                                <li>Python / Django</li>
+                                <li>UI Design (Figma)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="print-btn" onclick="window.print()">Save as PDF</button>
+                </div>
+                <section id="cv-section" class="content-section hidden">
+    <div class="cv-wrapper">
+        <button class="close-btn" onclick="showSection('home')">✕ Close</button>
+        </div>
+</section>
+
+<section id="contact" class="content-section hidden">
+    <div class="contact-wrapper">
+        <button class="close-btn" onclick="showSection('home')">✕ Close</button>
+        </div>
+</section>
+            </section>
+
+            <section id="about" class="content-section hidden">
+                <div class="about-container">
+                    <h1>About Me</h1>
+                    <p>I am a passionate developer from Itahari, Nepal. I love turning complex problems into simple, beautiful, and intuitive designs.</p>
+                </div>
+            </section>
+
+            <section id="services" class="content-section hidden">
+                <div class="services-container">
+                    <h1>My Services</h1>
+                    <p>I provide high-quality web development, custom software solutions, and UI/UX design services.</p>
+                </div>
+            </section>
+
+            <section id="contact" class="content-section hidden">
+                <div class="contact-wrapper">
+                    <div class="contact-header">
+                        <h1>Get In Touch</h1>
+                        <p>Feel free to reach out for collaborations or project inquiries.</p>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn-cv">Send Message</button>
+                    </form>
+                    <div class="contact-details">
+                        <p>📧 bishesh@email.com</p>
+                        <p>📍 Itahari, Nepal</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
