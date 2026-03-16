@@ -1,0 +1,24 @@
+<!-- AJAX=acyunchonoud javascript and xml -->
+<!DOCTYPE html>
+<html>
+    <body>
+<h2>AJAX Example</h2>
+<button onclick="loadData()">load Data</button>
+<div id="demo"></div>
+<script>
+    function loadData() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status ==200) {
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+        
+    };
+    xhttp.open("GET","data.txt",true);
+    xhttp.send();
+}
+
+</script>
+    </body>
+</html>
+</html>
