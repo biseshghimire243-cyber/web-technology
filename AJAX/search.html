@@ -1,0 +1,24 @@
+<!-- AJAX=acyunchonoud javascript and xml -->
+<!DOCTYPE html>
+<html>
+    <body>
+<h2>search Example</h2>
+<input type="text" onkeyup="searchData(this.value)">
+<div id="result"></div>
+<script>
+    function searchData(str) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status ==200) {
+                document.getElementById("result").innerHTML = this.responseText;
+            }
+        
+    };
+    xhttp.open("GET","data.txt",true);
+    xhttp.send();
+}
+
+</script>
+    </body>
+</html>
+</html>
